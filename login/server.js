@@ -16,11 +16,29 @@ const server = http.createServer((request, response) => {
     response.end(string)
   } else if(path === '/signUp' && method === 'POST') {
     getPostData(request, postData => {
-      let email = postData.email
-      let password = postData.password
-      let password_confirmation = postData.password_confirmation
-      response.end(JSON.stringify(postData))
+      let { email, password, password_confirmation } = postData
+      let errors = {}
+      // check email
+      if(email.indexOf('@') < 0) {
+        errors.email = '邮箱不合法'
+      }
+      if(password.length < 6) {
+        errors.password = '密码太短'
+      }
+      if(password_confirmation !== password) {
+        errors.password_confirmation = '两次密码输入不匹配'
+      }
+      response.setHeader('Content-Type', 'text/html;charset=utf-8')
+      response.end(JSON.stringify(errors))
     })
+  } else if(path === '/node_modules/jquery/dist/jquery.min.js') {
+    let string = fs.readFileSync('./node_modules/jquery/dist/jquery.min.js')
+    response.setHeader('Content-Type', 'application/javascript;charset=utf-8')
+    response.end(string)
+  } else if(path === '/main.js') {
+    let string = fs.readFileSync('./main.js')
+    response.setHeader('Content-Type', 'application/javascript;charset=utf-8')
+    response.end(string)
   } else {
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
