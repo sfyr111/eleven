@@ -58,8 +58,8 @@ function getPostData(request, callback) {
     let postData = {}
     array.forEach(kv => {
       let parts = kv.split('=')
-      let key = parts[0]
-      let value = parts[1]
+      let key = decodeURIComponent(parts[0])
+      let value = decodeURIComponent(parts[1])
       postData[key] = value
     })
     callback.call(null, postData)

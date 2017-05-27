@@ -10,12 +10,12 @@
 
 <body>
   <section>
-    <h1>登录</h1>
+    <h1>登 录</h1>
     <form name='login' action="/login" method="post">
       <div>
         <label for="">邮箱
-         <input type="text" name="email" value="">
-       </label>
+          <input type="text" name="email" value="">
+        </label>
       </div>
       <div>
         <label for="">密码
@@ -27,22 +27,25 @@
     </form>
   </section>
   <section>
-    <h1>注册</h1>
+    <h1>注 册</h1>
     <form name='signUp' action="/signUp" method="post">
       <div>
         <label for="">邮箱
-        <input type="text" name="email" value="">
-      </label>
+          <input type="text" name="email" value="">
+        </label>
+        <span name="email_error" class="error"></span>
       </div>
       <div>
         <label for="">密码
          <input type="password" name="password" value="">
        </label>
+       <span name="password_error" class="error"></span>
       </div>
       <div>
         <label for="">确认密码
-         <input type="password" name="password_confirmation" value="">
-       </label>
+          <input type="password" name="password_confirmation" value="">
+        </label>
+        <span name="password_confirmation_error" class="error"></span>
       </div>
       <div><input type="submit" name="" value="注册">
       </div>
@@ -57,7 +60,8 @@
       </div>
     </form>
   </section>
-<script src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script src="./main.js"></script>
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
