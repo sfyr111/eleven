@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>login</title>
+</head>
+
+<body>
+  <section>
+    <h1>登录</h1>
+    <form name='login' action="/login" method="post">
+      <div>
+        <label for="">邮箱
+         <input type="text" name="email" value="">
+       </label>
+      </div>
+      <div>
+        <label for="">密码
+          <input type="password" name="password" value="">
+        </label>
+      </div>
+      <div><input type="submit" name="" value="登录">
+      </div>
+    </form>
+  </section>
+  <section>
+    <h1>注册</h1>
+    <form name='singUp' action="/signUp" method="post">
+      <div>
+        <label for="">邮箱
+        <input type="text" name="email" value="">
+      </label>
+      </div>
+      <div>
+        <label for="">密码
+         <input type="password" name="password" value="">
+       </label>
+      </div>
+      <div>
+        <label for="">确认密码
+         <input type="password" name="password_confirmation" value="">
+       </label>
+      </div>
+      <div><input type="submit" name="" value="注册">
+      </div>
+    </form>
+  </section>
+  <section>
+    <form hidden name='resetPassword' action="">
+      <div><input type="text" name="email" value="">
+      </div>
+      <div>
+        <input type="submit" name="" value="请求重置密码">
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>
